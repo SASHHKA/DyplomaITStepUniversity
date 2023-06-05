@@ -1,0 +1,294 @@
+.wrapper {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+/*home*/
+.bot-wrapper {
+  width: 350px;
+  height: 350px;
+  background-color: #f5f5f5;
+}
+.bot-header {
+  width: 100%;
+  height: 50px;
+  background-color: grey;
+}
+.bot-input {
+  height: 50px;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5px;
+  border-top: 1px solid black;
+  box-shadow: 1px -3px 5px grey;
+}
+.bot-messages {
+  width: 100%;
+  height: 250px;
+}
+.option-one {
+  width: 40%;
+  height: 70%;
+}
+.option-two {
+  width: 40%;
+  height: 70%;
+}
+
+/* navbar */
+.navbox-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbox {
+  width: 75%;
+  height: auto;
+  border-bottom: 1px solid rgba(50, 47, 47, 0.392);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-self: center;
+  align-items: center;
+  padding: 7px 25px;
+}
+.navbox .leftside {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+.navbox .rightside-non-user {
+  display: flex;
+  flex-direction: row;
+}
+.navbox .rightside-non-user .navlinks {
+  font-size: 14px;
+  color: #000;
+  font-weight: 600;
+  margin: auto 10px;
+  text-decoration: none;
+}
+.navbox .rightside-non-user .navlinks:hover {
+  color: #9285855c;
+  transition: color 500ms ease;
+}
+.navbox .rightside-non-user .navlinks:active {
+  transform: scale(0.9);
+}
+.navbox .rightside-user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 10%;
+}
+.navbox .username {
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 5px;
+}
+.navbox .logout {
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  margin: 5px;
+}
+.navbox .logout .logout-btn {
+  border: none;
+  background-color: #fff;
+}
+.navbox .shop-cart {
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  margin: 5px;
+}
+.navbox .shop-cart .shop-cart-btn {
+  border: none;
+  background-color: #fff;
+}
+
+/*Cart-modal*/
+
+.cart-modal {
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.392);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0);
+  z-index: 999999999;
+}
+
+.cart-modal-content {
+  padding: 20px;
+  background-color: white;
+  width: 400px;
+  min-height: 600px;
+  position: absolute;
+  z-index: 9999999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+}
+
+.cart-product-wrapper {
+  width: 100%;
+}
+
+.cart-product-card {
+  width: 50%;
+}
+.cart-product-img img {
+  width: 100%;
+}
+
+.cart-modal.active {
+  transform: scale(1);
+}
+
+/* Presentation */
+.presentation-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.presentation {
+  margin: 50px 0;
+  background: url("D:\ReactProjects\Dyploma\eshop\src\img\presentation-bg.jpg")
+    no-repeat;
+  width: 75%;
+  height: 500px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.presentation::after {
+  content: "Чудовий асортимент товарів електроніки ";
+  position: absolute;
+  top: 100px;
+  left: 50px;
+  width: 300px;
+  font-size: 40px;
+  font-weight: 600;
+  color: #fff;
+}
+.presentation::before {
+  content: "з помірними цінами";
+  position: absolute;
+  top: 350px;
+  left: 50px;
+  width: 300px;
+  font-size: 18px;
+  font-weight: 400;
+  color: #fff;
+}
+
+/* addProduct */
+
+.container span {
+  color: red;
+}
+
+/* Products */
+.products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+.products-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.products-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 75%;
+}
+
+.product-card {
+  position: relative;
+  border-radius: 10px;
+  width: 350px;
+  margin: 50px;
+  background-color: #f5f5f5;
+  align-items: center;
+}
+.product-img {
+  width: 100%;
+  height: 350px;
+}
+.product-img img {
+  width: 100%;
+  height: 100%;
+}
+.products-container .product-card .product-name {
+  margin: 5px;
+  font-size: 20px;
+}
+.products-container .product-card .product-desc {
+  margin: 5px;
+  font-weight: 600;
+}
+.products-container .product-card .product-price {
+  margin: 5px;
+}
+
+.products-container .product-card .add-to-cart {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  background: darkgrey;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 35px;
+  color: #fff;
+  border-radius: 50%;
+  font-size: 30px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 500ms ease;
+}
+.products-container .product-card .add-to-cart:hover {
+  color: cyan;
+}
+.products-container .product-card .add-to-cart:active {
+  transform: scale(1.1);
+}
+
+/* Login and Registration */
+
+.container span {
+  color: #000;
+  font-weight: 600;
+}
+.container span .link {
+  color: #000;
+}
+.error-msg {
+  color: red;
+  font-weight: 600;
+}
+
+/* Footer */
+
+footer {
+  text-align: center;
+  margin-top: 100px;
+}
