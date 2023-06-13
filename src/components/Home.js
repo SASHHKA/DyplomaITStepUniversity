@@ -5,6 +5,8 @@ import { Products } from "./Products";
 import Presentation from "./Presentation";
 import Footer from "./Footer";
 import ChatBot from "./ChatBot";
+import { ProductsContextProvider } from "../global/ProductContext";
+import ChatButton from "./ChatButton";
 
 
 export const Home = ({user}) => {
@@ -13,9 +15,11 @@ export const Home = ({user}) => {
       <Navbar user={user} />
       <Presentation />
       <Products />
-      {/* <ChatBot /> */}
-      <Footer />
+      <ProductsContextProvider>
+        <ChatButton />
+      </ProductsContextProvider>
       
+      <Footer />
     </div>
   );
 };

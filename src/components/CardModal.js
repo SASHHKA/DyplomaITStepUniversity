@@ -1,12 +1,15 @@
 import React, { useContext } from 'react'
 import { CartContext } from '../global/CartContext';
+import { FaTrashAlt } from "react-icons/fa";
 
 const CardModal = ({active, setActive}) => {
     const cartContext = useContext(CartContext);
     console.log(cartContext);
   return (
     <div className={active ? "cart-modal active" : "cart-modal"} onClick={() => setActive(false)}>
+      
         <div className='cart-modal-content' onClick={e => e.stopPropagation()}>
+        <h2>Корзина</h2>
             {cartContext.cart.map((product) => (
                  <div className='cart-product-wrapper'>
                      <div className="cart-product-card">
@@ -22,7 +25,7 @@ const CardModal = ({active, setActive}) => {
                   <div className="cart-product-price">
                     <b>{product.productPrice} ₴</b>
                   </div>
-                  <button onClick={() => cartContext.dispatch({type: 'remove', payload: product})}>Зєбав</button>
+                  <button className='cart-product-delete-btn' onClick={() => cartContext.dispatch({type: 'remove', payload: product})}><FaTrashAlt/></button>
                 </div>
                  </div>
             ))}
